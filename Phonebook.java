@@ -92,11 +92,13 @@ public class Phonebook {
 						}
 					}
 					break;
-				default: break;
+				default: 
+					scanner.close();
+					System.exit(0);
 			}
 			System.out.println();
-		} while (entry < 11 && entry > 0);
-		scanner.close();
+		} while (true);
+		
 	}
 
 	public void addEntry(String[] data) {
@@ -138,10 +140,10 @@ public class Phonebook {
 
 		Person person = new Person(firstName, middleName, lastName, sb.toString(), data[1], data[2], data[3], data[4]);
 		phonebook.add(person);
-		Collections.sort(phonebook, (Person p1, Person p2) -> p1.getLastName().toLowerCase().compareTo(p2.getLastName().toLowerCase()));
+		Collections.sort(phonebook, (Person p1, Person p2) -> p1.fullSortName().toLowerCase().compareTo(p2.fullSortName().toLowerCase()));
 		System.out.println("Entry Added!");
 	}
-	
+		
 	public void removeEntry(String phoneNumber, int type) {
 		for (int i = 0; i < phonebook.size(); i++) {
 			if (phonebook.get(i).getNumber().equals(phoneNumber)) {
@@ -210,5 +212,3 @@ public class Phonebook {
 	
 	
 }
-
-
