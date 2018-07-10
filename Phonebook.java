@@ -102,7 +102,7 @@ public class Phonebook {
 	}
 
 	public void addEntry(String[] data) {
-		if (data.length != 5) {
+		if (data.length != 6) {
 			System.out.println("Invalid Entry, check syntax");
 			return;
 		}
@@ -157,21 +157,21 @@ public class Phonebook {
 	
 	public void searchFirstName(String firstName) {
 		for (int i = 0; i < phonebook.size(); i++) {
-			if (phonebook.get(i).getFirstName().toLowerCase().equals(firstName.toLowerCase()))
+			if (phonebook.get(i).getFirstName().equalsIgnoreCase(firstName))
 				printEntry(i);
 		}
 	}
 	
 	public void searchLastName(String lastName) {
 		for (int i = 0; i < phonebook.size(); i++) {
-			if (phonebook.get(i).getLastName().toLowerCase().equals(lastName.toLowerCase()))
+			if (phonebook.get(i).getLastName().equalsIgnoreCase(lastName))
 				printEntry(i);
 		}
 	}
 	
 	public void searchFullName(String fullName) {
 		for (int i = 0; i < phonebook.size(); i++) {
-			if (phonebook.get(i).getFullName().toLowerCase().equals(fullName.toLowerCase()))
+			if (phonebook.get(i).getFullName().equalsIgnoreCase(fullName))
 				printEntry(i);
 		}
 	}
@@ -193,14 +193,14 @@ public class Phonebook {
 	
 	public void citySearch(String city) {
 		for (int i = 0; i < phonebook.size(); i++) {
-			if (phonebook.get(i).getAddress().getCity().toLowerCase().equals(city.toLowerCase()))
+			if (phonebook.get(i).getAddress().getCity().equalsIgnoreCase(city))
 				printEntry(i);
 		}
 	}
 	
 	public void stateSearch(String state) {
 		for (int i = 0; i < phonebook.size(); i++) {
-			if (phonebook.get(i).getAddress().getState().toLowerCase().equals(state.toLowerCase()))
+			if (phonebook.get(i).getAddress().getState().equalsIgnoreCase(state))
 				printEntry(i);
 		}
 	}
