@@ -11,7 +11,6 @@ public class Phonebook {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		Phonebook book = new Phonebook();
-		int entry = 0;
 		String input;
 		
 		do {
@@ -26,52 +25,51 @@ public class Phonebook {
 			System.out.println("8- delete record based on phone number");
 			System.out.println("9- update record base on phone number");
 			System.out.println("10- Print all Records");
-			System.out.println("Any other number to exit");
-			entry = scanner.nextInt();
+			System.out.println("11-To exit");
 			input = scanner.nextLine();
 			System.out.println();
-			switch (entry) {
-				case 1: 
+			switch (input) {
+				case "1": 
 					System.out.println("Make new entry in the following format: John Michael West Doe, 574 Pole ave, St. Peters, MO, 63333, 5628592375");
 					input = scanner.nextLine();
 					book.addEntry(input.split(", "));
 					break;
-				case 2:
+				case "2":
 					System.out.println("Enter the first name you want to search by");
 					input = scanner.nextLine();
 					book.searchFirstName(input);
 					break;
-				case 3:
+				case "3":
 					System.out.println("Enter the last name you want to search by");
 					input = scanner.nextLine();
 					book.searchLastName(input);
 					break;
-				case 4:
+				case "4":
 					System.out.println("Enter the full name you want to search by");
 					input = scanner.nextLine();
 					book.searchFullName(input);
 					break;
-				case 5:
+				case "5":
 					System.out.println("Enter the phone number you are searching by, format: (562)-859-2375");
 					input = scanner.nextLine();
 					book.searchPhoneNumber(input);
 					break;
-				case 6:
+				case "6":
 					System.out.println("Enter the city you're looking by");
 					input = scanner.nextLine();
 					book.citySearch(input);
 					break;
-				case 7: 
+				case "7": 
 					System.out.println("Enter the state you're looking by");
 					input = scanner.nextLine();
 					book.stateSearch(input);
 					break;
-				case 8:
+				case "8":
 					System.out.println("Enter the phone number you want to remove, format: (562)-859-2375");
 					input = scanner.nextLine();
 					book.removeEntry(input, 0);
 					break;
-				case 9:
+				case "9":
 					System.out.println("Enter the phone number to update by");
 					input = scanner.nextLine();
 					if (book.findNumber(input) > -1) {
@@ -83,7 +81,7 @@ public class Phonebook {
 						System.out.println("Number not found");
 					}					
 					break;
-				case 10:
+				case "10":
 					if (phonebook.size() == 0) {
 						System.out.println("Phonebook is empty");
 					} else {
@@ -92,9 +90,11 @@ public class Phonebook {
 						}
 					}
 					break;
-				default: 
+				case "11":
 					scanner.close();
 					System.exit(0);
+				default: 
+					break;
 			}
 			System.out.println();
 		} while (true);
