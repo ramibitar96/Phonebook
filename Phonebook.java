@@ -138,7 +138,7 @@ public class Phonebook {
 
 		Person person = new Person(firstName, middleName, lastName, sb.toString(), data[1], data[2], data[3], data[4]);
 		phonebook.add(person);
-		Collections.sort(phonebook, (Person p1, Person p2) -> p1.getFullName().toLowerCase().compareTo(p2.getFullName().toLowerCase()));
+		Collections.sort(phonebook, (Person p1, Person p2) -> p1.getLastName().toLowerCase().compareTo(p2.getLastName().toLowerCase()));
 		System.out.println("Entry Added!");
 	}
 	
