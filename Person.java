@@ -38,6 +38,13 @@ public class Person {
 			return this.firstName + " " + this.middleName + " " + this.lastName;
 	}
 	
+	public String fullSortName() {
+		if (this.middleName.equals(""))
+			return this.lastName + " " + this.firstName;
+		else
+			return this.lastName + " " + this.firstName + " " + this.middleName;
+	}
+	
 	public String getNumber() {
 		return this.phoneNumber;
 	}
