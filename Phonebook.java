@@ -142,10 +142,6 @@ public class Phonebook {
 		System.out.println("Entry Added!");
 	}
 	
-	public void updateEntry(int update) {
-		
-	}
-	
 	public void removeEntry(String phoneNumber, int type) {
 		for (int i = 0; i < phonebook.size(); i++) {
 			if (phonebook.get(i).getNumber().equals(phoneNumber)) {
